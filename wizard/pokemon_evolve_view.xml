@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="evolve_pokemon_wizard_form">
+            <field name="name">Evolve Pokemon</field>
+            <field name="model">pokemon.evolve.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add card Information">
+                    <div class="alert alert-danger" role="alert"><strong>You can not revert this acion.</strong></div>
+                    <group>
+                        <group string="Pokemon to evolve">
+                           <div>
+                                <field name="pokemon_id" options="{'no_create':True}" requiered="True" />
+                                <field name="trainer_id" invisible="1"/>
+                           </div>
+                        </group>
+                        <group string="Confirmation">
+                            <div>
+                                <field name="sure"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="evolve_to_id" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Evolve" class="oe_highlight" type="object" name="evolve_confirm" />
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

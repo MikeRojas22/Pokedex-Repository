@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+pokedex_pokemon_access,Model Access to Pokemon model,model_pokedex_pokemon,,1,1,1,1
+pokedex_pokemon_type_access,Model Access to Pokemon type model,model_pokedex_pokemon_type,,1,1,1,1
+pokedex_pokemon_move_access,Model Access to Pokemon move model,model_pokedex_pokemon_move,,1,1,1,1
+pokedex_pokemon_evolve_access,Model Access to Pokemon evolution model,model_pokemon_evolve_wizard,,1,1,1,1

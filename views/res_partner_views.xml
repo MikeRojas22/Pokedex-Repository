@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_pokedex_trainer" model ="ir.ui.view">
+        <field name="name">Form view trainer</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="before">
+                <header>
+                    <button name="evolve_pokemon" type="object" string="Evolve a pokemon" class="btn-primary"></button>
+                </header>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page[@autofocus='autofocus']" position="before">
+                <page string="My pokemon" autofocus="autofocus">
+                    <field name="pokemon_ids">
+                        <tree>
+                            <field name="sequence"/>
+                            <field name="image_128" widget="image" class="oe_avatar" options='{"size":[50,50]}' string="Image"/>
+                            <field name="name"/>
+                            <field name="type_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

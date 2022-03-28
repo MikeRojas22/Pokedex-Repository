@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pokedex_pokemon_move_view_tree" model="ir.ui.view">
+        <field name="name">Tree view for pokemon move</field>
+        <field name="model">pokedex.pokemon.move</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="pokedex_pokemon_move_action" model="ir.actions.act_window">
+        <field name="name">Move</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pokedex.pokemon.move</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiting_face">Define the pokemon move</p>
+        </field>
+    </record>
+
+    <menuitem id="pokedex_pokemon_menu" name="pokedex" web_icon="pokedex,static/description/icon.png" sequence="1" />
+
+    <menuitem id="pokedex_pokemon_move_menu" action="pokedex_pokemon_move_action" parent="pokedex_pokemon_menu" sequence="1" />
+
+    <record id="pokedex_pokemon_move_view_form" model="ir.ui.view">
+        <field name="name">Form view for pokemon move</field>
+        <field name="model">pokedex.pokemon.move</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>
+                            <span>
+                                <field name="name" />
+                            </span>
+                        </h1>
+                    </div>
+
+                    <div class="oe_left">
+                        <group>
+                            <field name="power" />
+                        </group>
+                    </div>
+
+                    <div class="oe_right">
+                        <group>
+                            <field name="type_id" widget="many2one_tags" options="{'color_field':'color', 'no_create_edit':True}" placeholder="Types..." />
+                        </group>
+                    </div>
+
+                    <group string="Description">
+                        <field name="description" nolabel="1" placeholder="Notes of pokemon move." />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
